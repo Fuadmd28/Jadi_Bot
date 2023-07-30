@@ -16,16 +16,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname) // Bring in the ability to create the 'require' method
 const { name, author } = require(join(__dirname, './package.json')) // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
 
-say("Yaemiko - MD", {
-  font: "shade",
-  align: "center",
-  colors: ["cyan", "blue"]
-})
-say("Powered by Vynaa", {
-  font: "console",
-  align: "center",
-  colors: ["cyan"]
-})
+say('Clara - MD', { font: 'chrome', align: 'center', gradient: ['blue', 'green'] })
+say(`'Whatsapp Bot MD by Ken`, { font: 'console', align: 'center', gradient: ['blue', 'green'] })
 
 var isRunning = false
 /**
@@ -36,7 +28,7 @@ function start(file) {
   if (isRunning) return
   isRunning = true
   let args = [join(__dirname, file), ...process.argv.slice(2)]
-  say([process.argv[0], ...args].join(' '), { font: 'console', align: 'center', gradient: ['cyan', 'magenta'] })
+  say([process.argv[0], ...args].join(' '), { font: 'console', align: 'center', gradient: ['red', 'magenta'] })
   setupMaster({ exec: args[0], args: args.slice(1) })
   let p = fork()
   p.on('message', data => {
@@ -71,4 +63,4 @@ function start(file) {
 
 start('main.js')
 
-require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080
